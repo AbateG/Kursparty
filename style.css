@@ -1,0 +1,378 @@
+/* --- GRUNDEINSTELLUNGEN & TYPOGRAFIE --- */
+:root {
+    --primary-color: #FFC400; /* Gold für Akzente & Überschriften */
+    --secondary-color: #FFFFFF; /* Weiß für den normalen Text */
+    --card-background: rgba(154, 153, 153, 0.485); /* Behalten wir bei */
+    --font-family: 'Inter', sans-serif;
+    --shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    --border-radius: 12px;
+}
+
+html {
+    font-size: 17px; /* The default is 16px. Increase this for larger text everywhere. */
+}
+
+body {
+    font-family: var(--font-family);
+
+    /* KORREKTUR: Overlay und Bild in einer Eigenschaft kombiniert */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("images/30119731_7665903.jpg");
+
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    color: var(--secondary-color);
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px; /* Changed from 900px */
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: #FFC400; /* Gold color */
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; /* Black edges */
+}
+
+.journey h2 {
+    text-align: center;
+    color: #FFC400;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    margin: 4rem 0 4rem; /* Sets top, right/left, and bottom space */
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+/* --- PARTIKEL-HINTERGRUND --- */
+#tsparticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+
+/* --- HEADER --- */
+header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* --- ANIMATION BEIM SCROLLEN --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- INTERAKTIVE TIMELINE --- */
+.journey {
+    margin-bottom: 4rem;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.milestone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background: var(--card-background);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.milestone:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.milestone-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.invitation-box {
+    background: rgba(255, 255, 255, 0.5); /* More transparent white */
+    border-radius: var(--border-radius);
+    padding: 4rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 5rem;
+    color: #333333;
+}
+
+.invitation-header h2 {
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    color: #FFC400 !important; /* Force the gold color */
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.deco-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+.countdown {
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #FFC400; /* Roter Akzent */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.countdown span {
+    margin: 0 0.5rem;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* Positions the "Mission erfüllt!" text absolutely */
+.details-grid + p {
+    position: absolute;
+    z-index: 1; /* Lower layer */
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 920px; /* IMPORTANT: Adjust this pixel value to move the text up or down */
+    font-weight: bold;
+    color: #444;
+}
+
+.detail-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: #ffc4006e; /* Golden background */
+    border-radius: var(--border-radius);
+    border: none; /* Removed the dark border */
+}
+
+.detail-card h3,
+.detail-card p {
+    color: #000000; /* Black text for high contrast */
+}
+
+.bring-along {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.bring-along ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bring-along li {
+    margin: 0.5rem 0;
+}
+
+.bring-along span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* PASTE THE NEW RULE HERE */
+/* New rule to fix text color inside the light invitation box */
+.invitation-box h2,
+.invitation-box h3,
+.invitation-box .bring-along span {
+    color: #333333;
+}
+
+.calendar-button {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto 0;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--primary-color);
+    color: #000000; /* Schwarz für Lesbarkeit auf Gold */
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.calendar-button:hover {
+    background-color: #D9A800; /* Dunkleres Gold */
+    transform: scale(1.05);
+}
+
+.rsvp {
+    position: relative; /* This is necessary for z-index */
+    z-index: 2; /* Higher layer */
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+#rsvp-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+#guest-name {
+    width: 80%;
+    max-width: 300px;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+
+.rsvp-button {
+    padding: 0.8rem 1.8rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: #000000; /* Schwarz für Lesbarkeit auf Gold */
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.rsvp-button:hover {
+    background-color: #D9A800; /* Dunkleres Gold */
+    transform: scale(1.05);
+}
+
+#rsvp-confirmation {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* --- MODAL (POP-UP) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-overlay.hidden .modal-content {
+    transform: scale(0.9);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    font-family: var(--font-family);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* --- UTILITY KLASSEN --- */
+.hidden {
+    display: none;
+}
+
+/* Final correction for "Wann?" and "Wo?" text color */
+.invitation-box .detail-card h3 {
+    color: #FFFFFF;
+}
