@@ -1,21 +1,20 @@
-/* --- GRUNDEINSTELLUNGEN & TYPOGRAFIE --- */
 :root {
-    --primary-color: #FFC400; /* Gold für Akzente & Überschriften */
-    --secondary-color: #FFFFFF; /* Weiß für den normalen Text */
-    --card-background: rgba(154, 153, 153, 0.485); /* Behalten wir bei */
+    --primary-color: #FFC400; 
+    --secondary-color: #FFFFFF;
+    --card-background: rgba(154, 153, 153, 0.485); 
     --font-family: 'Inter', sans-serif;
     --shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
     --border-radius: 12px;
 }
 
 html {
-    font-size: 17px; /* The default is 16px. Increase this for larger text everywhere. */
+    font-size: 17px; 
 }
 
 body {
     font-family: var(--font-family);
 
-    /* KORREKTUR: Overlay und Bild in einer Eigenschaft kombiniert */
+
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("images/30119731_7665903.jpg");
@@ -32,7 +31,7 @@ body {
 }
 
 .container {
-    max-width: 1100px; /* Changed from 900px */
+    max-width: 1100px; 
     margin: 0 auto;
     padding: 2rem;
     position: relative;
@@ -46,12 +45,12 @@ h1, h2, h3 {
 
 h1 {
     font-size: clamp(2.5rem, 6vw, 4rem);
-    color: #FFC400; /* Gold color */
+    color: #FFC400; 
     text-shadow:
         -1px -1px 0 #000,
         1px -1px 0 #000,
         -1px 1px 0 #000,
-        1px 1px 0 #000; /* Black edges */
+        1px 1px 0 #000; 
 }
 
 .journey h2 {
@@ -62,7 +61,7 @@ h1 {
         1px -1px 0 #000,
         -1px 1px 0 #000,
         1px 1px 0 #000;
-    margin: 4rem 0 4rem; /* Sets top, right/left, and bottom space */
+    margin: 4rem 0 4rem; 
 }
 
 h3 {
@@ -70,7 +69,6 @@ h3 {
     color: var(--primary-color);
 }
 
-/* --- PARTIKEL-HINTERGRUND --- */
 #tsparticles {
     position: fixed;
     top: 0;
@@ -81,7 +79,6 @@ h3 {
 }
 
 
-/* --- HEADER --- */
 header {
     text-align: center;
     margin-bottom: 4rem;
@@ -92,7 +89,7 @@ header {
     color: #ffffff;
 }
 
-/* --- ANIMATION BEIM SCROLLEN --- */
+
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -104,7 +101,6 @@ header {
     transform: translateY(0);
 }
 
-/* --- INTERAKTIVE TIMELINE --- */
 .journey {
     margin-bottom: 4rem;
 }
@@ -141,7 +137,7 @@ header {
 }
 
 .invitation-box {
-    background: rgba(255, 255, 255, 0.5); /* More transparent white */
+    background: rgba(255, 255, 255, 0.5); 
     border-radius: var(--border-radius);
     padding: 4rem;
     box-shadow: var(--shadow);
@@ -151,7 +147,7 @@ header {
 
 .invitation-header h2 {
     font-size: clamp(2.2rem, 6vw, 3.5rem);
-    color: #FFC400 !important; /* Force the gold color */
+    color: #FFC400 !important; 
     text-shadow:
         -1px -1px 0 #000,
         1px -1px 0 #000,
@@ -186,14 +182,13 @@ header {
     margin-bottom: 2rem;
 }
 
-/* Positions the "Mission erfüllt!" text absolutely */
 .details-grid + p {
     position: absolute;
-    z-index: 1; /* Lower layer */
+    z-index: 1; 
     width: 100%;
     text-align: center;
     left: 0;
-    top: 920px; /* IMPORTANT: Adjust this pixel value to move the text up or down */
+    top: 920px; 
     font-weight: bold;
     color: #444;
 }
@@ -201,14 +196,14 @@ header {
 .detail-card {
     text-align: center;
     padding: 1.5rem;
-    background: #ffc4006e; /* Golden background */
+    background: #ffc4006e; 
     border-radius: var(--border-radius);
-    border: none; /* Removed the dark border */
+    border: none; 
 }
 
 .detail-card h3,
 .detail-card p {
-    color: #000000; /* Black text for high contrast */
+    color: #000000; 
 }
 
 .bring-along {
@@ -230,8 +225,6 @@ header {
     color: var(--primary-color);
 }
 
-/* PASTE THE NEW RULE HERE */
-/* New rule to fix text color inside the light invitation box */
 .invitation-box h2,
 .invitation-box h3,
 .invitation-box .bring-along span {
@@ -244,7 +237,7 @@ header {
     margin: 2rem auto 0;
     padding: 0.8rem 1.8rem;
     background-color: var(--primary-color);
-    color: #000000; /* Schwarz für Lesbarkeit auf Gold */
+    color: #000000; 
     text-decoration: none;
     font-weight: 600;
     border-radius: 50px;
@@ -252,13 +245,13 @@ header {
 }
 
 .calendar-button:hover {
-    background-color: #D9A800; /* Dunkleres Gold */
+    background-color: #D9A800;
     transform: scale(1.05);
 }
 
 .rsvp {
-    position: relative; /* This is necessary for z-index */
-    z-index: 2; /* Higher layer */
+    position: relative; 
+    z-index: 2; 
     background: var(--card-background);
     padding: 2.5rem;
     border-radius: var(--border-radius);
@@ -288,7 +281,7 @@ header {
     padding: 0.8rem 1.8rem;
     border: none;
     background-color: var(--primary-color);
-    color: #000000; /* Schwarz für Lesbarkeit auf Gold */
+    color: #000000; 
     font-size: 1rem;
     font-weight: 600;
     border-radius: 50px;
@@ -297,7 +290,7 @@ header {
 }
 
 .rsvp-button:hover {
-    background-color: #D9A800; /* Dunkleres Gold */
+    background-color: #D9A800; 
     transform: scale(1.05);
 }
 
@@ -308,7 +301,6 @@ header {
     margin-top: 1rem;
 }
 
-/* --- MODAL (POP-UP) --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -356,7 +348,6 @@ header {
     transform: scale(0.9);
 }
 
-/* --- FOOTER --- */
 footer {
     text-align: center;
     margin-top: 4rem;
@@ -367,12 +358,10 @@ footer {
     color: #ffffff;
 }
 
-/* --- UTILITY KLASSEN --- */
 .hidden {
     display: none;
 }
 
-/* Final correction for "Wann?" and "Wo?" text color */
 .invitation-box .detail-card h3 {
     color: #FFFFFF;
 }
